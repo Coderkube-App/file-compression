@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    /* CSS Keyframe Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; filter: drop-shadow(0 0 2px #818cf8); }
+      50% { opacity: 1; filter: drop-shadow(0 0 12px #38bdf8); }
+    }
+
+    @keyframes flowIn {
+      0% { transform: translate(-150px, 0) scale(0.8); opacity: 0; }
+      30% { opacity: 1; }
+      50% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+      100% { transform: translate(0, 0) scale(0.5); opacity: 0; }
+    }
+
+    @keyframes flowOut {
+      0% { transform: translate(0, 0) scale(0.5); opacity: 0; }
+      50% { transform: translate(60px, 0) scale(0.9); opacity: 1; }
+      100% { transform: translate(160px, 0) scale(1); opacity: 0; }
+    }
+
+    /* Classes */
+    .bg { fill: url(#bgGrad); }
+    .title { font-family: 'Segoe UI', system-ui, sans-serif; font-weight: 800; font-size: 34px; fill: #ffffff; }
+    .subtitle { font-family: 'Segoe UI', system-ui, sans-serif; font-weight: 400; font-size: 14px; fill: #94a3b8; letter-spacing: 2px; }
+    
+    .processor-box {
+      fill: url(#pipeGrad);
+      stroke: url(#accentGrad);
+      stroke-width: 2;
+    }
+    
+    .glow-effect {
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    .file-icon {
+      animation: float 4s infinite ease-in-out;
+    }
+
+    .input-stream-1 { animation: flowIn 4s infinite linear; }
+    .input-stream-2 { animation: flowIn 4s infinite linear; animation-delay: 1.3s; }
+    .input-stream-3 { animation: flowIn 4s infinite linear; animation-delay: 2.6s; }
+
+    .output-stream-1 { animation: flowOut 4s infinite linear; }
+    .output-stream-2 { animation: flowOut 4s infinite linear; animation-delay: 1.3s; }
+    .output-stream-3 { animation: flowOut 4s infinite linear; animation-delay: 2.6s; }
+  </style>
+
+  <!-- Background -->
+  <rect class="bg" width="100%" height="100%" rx="12" />
+
+  <!-- Grid decoration lines -->
+  <g stroke="#334155" stroke-width="0.5" opacity="0.3">
+    <line x1="0" y1="50" x2="800" y2="50" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="150" x2="800" y2="150" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="250" x2="800" y2="250" />
+  </g>
+
+  <!-- Header text -->
+  <text x="50" y="70" class="title">Flexi Media Handler</text>
+  <text x="50" y="95" class="subtitle">COMPRESS • CONVERT • OPTIMIZE</text>
+
+  <!-- Pipeline Graphic Group -->
+  <g transform="translate(100, 20)">
+    <!-- Input Side Labels -->
+    <text x="50" y="115" font-family="'Segoe UI', sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle" opacity="0.6">RAW UPLOADS</text>
+    
+    <!-- Output Side Labels -->
+    <text x="550" y="115" font-family="'Segoe UI', sans-serif" font-size="11" fill="#38bdf8" text-anchor="middle">OPTIMIZED</text>
+
+    <!-- Processing Box -->
+    <rect x="250" y="120" width="100" height="80" rx="10" class="processor-box glow-effect" />
+    
+    <text x="300" y="166" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="14" fill="#ffffff" text-anchor="middle" letter-spacing="1">ZIP/PDF</text>
+    <text x="300" y="182" font-family="'Segoe UI', sans-serif" font-size="9" fill="#818cf8" text-anchor="middle">SHARP / FFMPEG</text>
+
+    <!-- Left Connection Pipe -->
+    <path d="M 180,160 L 250,160" stroke="url(#accentGrad)" stroke-width="3" stroke-dasharray="5 5" />
+    <!-- Right Connection Pipe -->
+    <path d="M 350,160 L 420,160" stroke="url(#accentGrad)" stroke-width="3" stroke-dasharray="5 5" />
+
+    <!-- INPUT FLOW (Files moving in) -->
+    <g class="input-stream-1" transform="translate(300, 160)">
+      <rect x="-110" y="-20" width="30" height="35" rx="3" fill="#ef4444" opacity="0.9" />
+      <text x="-95" y="2" font-family="sans-serif" font-size="9" fill="#ffffff" font-weight="bold" text-anchor="middle">MOV</text>
+      <text x="-95" y="11" font-family="sans-serif" font-size="7" fill="#ffffff" text-anchor="middle">15MB</text>
+    </g>
+    <g class="input-stream-2" transform="translate(300, 160)">
+      <rect x="-110" y="-20" width="30" height="35" rx="3" fill="#eab308" opacity="0.9" />
+      <text x="-95" y="2" font-family="sans-serif" font-size="9" fill="#000000" font-weight="bold" text-anchor="middle">PNG</text>
+      <text x="-95" y="11" font-family="sans-serif" font-size="7" fill="#000000" text-anchor="middle">12MB</text>
+    </g>
+    <g class="input-stream-3" transform="translate(300, 160)">
+      <rect x="-110" y="-20" width="30" height="35" rx="3" fill="#3b82f6" opacity="0.9" />
+      <text x="-95" y="2" font-family="sans-serif" font-size="9" fill="#ffffff" font-weight="bold" text-anchor="middle">DOCX</text>
+      <text x="-95" y="11" font-family="sans-serif" font-size="7" fill="#ffffff" text-anchor="middle">8MB</text>
+    </g>
+
+    <!-- OUTPUT FLOW (Optimized Files moving out) -->
+    <g class="output-stream-1" transform="translate(350, 160)">
+      <rect x="20" y="-20" width="30" height="35" rx="3" fill="#10b981" />
+      <text x="35" y="2" font-family="sans-serif" font-size="9" fill="#ffffff" font-weight="bold" text-anchor="middle">MP4</text>
+      <text x="35" y="11" font-family="sans-serif" font-size="7" fill="#ffffff" text-anchor="middle">1.2MB</text>
+    </g>
+    <g class="output-stream-2" transform="translate(350, 160)">
+      <rect x="20" y="-20" width="30" height="35" rx="3" fill="#06b6d4" />
+      <text x="35" y="2" font-family="sans-serif" font-size="9" fill="#ffffff" font-weight="bold" text-anchor="middle">WEBP</text>
+      <text x="35" y="11" font-family="sans-serif" font-size="7" fill="#ffffff" text-anchor="middle">850KB</text>
+    </g>
+    <g class="output-stream-3" transform="translate(350, 160)">
+      <rect x="20" y="-20" width="30" height="35" rx="3" fill="#8b5cf6" />
+      <text x="35" y="2" font-family="sans-serif" font-size="9" fill="#ffffff" font-weight="bold" text-anchor="middle">PDF</text>
+      <text x="35" y="11" font-family="sans-serif" font-size="7" fill="#ffffff" text-anchor="middle">1.1MB</text>
+    </g>
+  </g>
+</svg>
