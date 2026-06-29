@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Express File Compressor Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/Coderkube-App/file-compression/main/assets/banner.svg" alt="Express File Compressor Banner" width="100%">
 </p>
 
 # Express File Compressor

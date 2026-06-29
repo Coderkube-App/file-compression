@@ -1,6 +1,6 @@
 {
   "name": "express-file-compressor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Flexible and configurable Multer wrapper for file uploads supporting auto-conversion and compression of images, videos, audio, documents (to PDF), and generic archiving.",
   "main": "src/index.js",
   "scripts": {
