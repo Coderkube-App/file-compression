@@ -9,7 +9,7 @@ const media = flexiMedia({
 });
 
 async function runTests() {
-    console.log("🚀 Starting manual test suite for file-compression...");
+    console.log("🚀 Starting manual test suite for express-file-compressor...");
 
     // Ensure clean output directory
     const testUploadDir = path.join(__dirname, "test-uploads");

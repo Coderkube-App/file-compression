@@ -103,7 +103,7 @@ function flexiMediaHandler(config = {}) {
                 }
             } catch (e) {
                 if (config.debug) {
-                    console.warn(`[file-compression] Rule "${rule.name || rule.convert}" failed. Saving original file. Error: ${e.message}`);
+                    console.warn(`[express-file-compressor] Rule "${rule.name || rule.convert}" failed. Saving original file. Error: ${e.message}`);
                 }
                 // Fallback to original buffer and extension if conversion fails
                 buffer = file.buffer;
@@ -157,7 +157,7 @@ function flexiMediaHandler(config = {}) {
                         delete file.buffer;
                     } catch (e) {
                         if (config.debug) {
-                            console.error(`[file-compression] Processing file "${file.originalname}" failed:`, e.message);
+                            console.error(`[express-file-compressor] Processing file "${file.originalname}" failed:`, e.message);
                         }
                     }
                 }

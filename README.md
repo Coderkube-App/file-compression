@@ -1,8 +1,10 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Flexi Media Handler Banner" width="100%">
+  <img src="assets/banner.svg" alt="Express File Compressor Banner" width="100%">
 </p>
 
-# Flexi Media Handler
+# Express File Compressor
+
+[![GitHub repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/Coderkube-App/file-compression)
 
 A flexible, drop-in wrapper over Multer memory storage designed for easy media processing, conversion, and compression on local environments. Handles Images (using `sharp`), Videos & Audios (using `fluent-ffmpeg`), Document to PDF conversion (using `LibreOffice`), PDF optimization, and ZIP generation out of the box.
 
@@ -20,7 +22,7 @@ A flexible, drop-in wrapper over Multer memory storage designed for easy media p
 ## Installation
 
 ```bash
-npm install file-compression
+npm install express-file-compressor
 ```
 
 ### System Requirements (Optional, based on features used)
@@ -33,7 +35,7 @@ npm install file-compression
 
 ```javascript
 const express = require('express');
-const flexiMedia = require('file-compression');
+const flexiMedia = require('express-file-compressor');
 
 const app = express();
 
@@ -100,7 +102,7 @@ const media = flexiMedia({
 You can also import and use the underlying converters directly inside your application logic.
 
 ```javascript
-const { converters } = require('file-compression')();
+const { converters } = require('express-file-compressor')();
 
 // 1. Compress Image
 const webpBuffer = await converters.compressImage(rawImageBuffer, {

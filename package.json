@@ -1,6 +1,6 @@
 {
-  "name": "file-compression",
-  "version": "1.0.0",
+  "name": "express-file-compressor",
+  "version": "1.0.1",
   "description": "Flexible and configurable Multer wrapper for file uploads supporting auto-conversion and compression of images, videos, audio, documents (to PDF), and generic archiving.",
   "main": "src/index.js",
   "scripts": {
@@ -19,6 +19,14 @@
   ],
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coderkube-App/file-compression.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Coderkube-App/file-compression/issues"
+  },
+  "homepage": "https://github.com/Coderkube-App/file-compression#readme",
   "dependencies": {
     "archiver": "^7.0.1",
     "multer": "^1.4.5-lts.1",
