@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Coderkube-App/file-compression/main/assets/banner.svg" alt="Express File Compressor Banner" width="100%">
-</p>
+![Smart Terminal Handler Demo](./assets/banner.svg)
 
 # Express File Compressor
 
